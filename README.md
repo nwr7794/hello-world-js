@@ -1,2 +1,2 @@
 # hello-world-js
-Example app form trade the macro
+Example app from trade the macro
