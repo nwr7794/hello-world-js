@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    
+<body>
+
+    <h1><u>ETF Valuation</u></h1>
+    <h3>(Using weighted average of top 15 holdings)</h3>
+
+        <div id="table_div"></div>
+
+        <p><b>Click table rows to compare individual ETFs</b>
+            <button class="btn danger" onclick="buttonReset()">RESET</button>
+        </p>
+
+
+        <label for="Valuation Metric">Valuation Metric:</label>
+        <select name="Valuation Metric" id="value_metric" onchange="tableEXE(); return false">
+            <option value="P/E">Price/Earnings (TTM)</option>
+            <option value="P/S">Price/Sales (TTM)</option>
+        </select>
+
+        <label for="Scale">Scale:</label>
+        <select name="Scale" id="scale_metric" onchange="chartEXE(); return false">
+            <option value="Absolute">Absolute</option>
+            <option value="Index">Indexed (baseline = 100)</option>
+        </select>
+
+        <div id="line_chart_div" style="width: 100vw; height: 45vw;"></div>
+
+        <label for="Start_Year">Start year:</label>
+        <select name="Start_Year" id="Start_Year_Var" onchange="chartEXE(); return false">
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+        </select>
+
+
+
+  </head>
+  <body>
+            <!--Load the AJAX API-->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
